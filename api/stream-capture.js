@@ -12,12 +12,26 @@ async function getText(url, ref) {
   return { status: res.status, finalUrl, text: buf.toString('utf8'), sha256: L.sha256(buf), at: new Date().toISOString() };
 }
 
+async function freshManifest(url, page, pref) {
+  const { res } = await H.fetchSafe(page, pref, 8000, 'iframe');
+  const { buf } = await H.readCapped(res, 1500000);
+  const want = new URL(url); const key = want.pathname;
+  const found = (buf.toString('utf8').replace(/\\\//g, '/').match(/https?:\/\/[^"'\s<>()]+?\.m3u8[^"'\s<>()]*/gi) || []).map(u => { try { return new URL(u); } catch { return null; } }).filter(Boolean);
+  const same = found.find(u => u.pathname === key && u.hostname.split('.').slice(-2).join('.') === want.hostname.split('.').slice(-2).join('.'));
+  return same ? same.href : url;
+}
+
 module.exports = async (req, res) => {
   const q = req.query || {};
   let url = String(q.url || '').trim(); const ref = String(q.ref || '').trim() || null;
-  try { url = new URL(url).href; if (ref) new URL(ref); } catch { return L.send(res, 400, { error: 'URL del manifiesto inválida' }); }
+  const page = String(q.page || '').trim() || null; const pref = String(q.pref || '').trim() || null;
+  try { url = new URL(url).href; if (ref) new URL(ref); if (page) new URL(page); if (pref) new URL(pref); } catch { return L.send(res, 400, { error: 'URL del manifiesto inválida' }); }
   const startedAt = new Date().toISOString();
+  let tokenRefreshed = false;
   try {
+    // Muchos streams piratas firman el .m3u8 con un token atado a la IP que abrió el reproductor:
+    // se vuelve a abrir la página del reproductor desde acá para usar un token propio.
+    if (page) url = await freshManifest(url, page, pref).then(u => { tokenRefreshed = u !== url; return u; }).catch(() => url);
     let m = await getText(url, ref);
     if (!m.text.includes('#EXTM3U')) return L.send(res, 422, { error: 'No es un manifiesto HLS (.m3u8)', status: m.status });
     let variant = null;
@@ -56,7 +70,7 @@ module.exports = async (req, res) => {
       } catch (e) { segments.push({ url: s.url, seq: s.seq, error: e.message, fetchedAt: t0 }); }
     }
     return L.send(res, 200, {
-      manifest: url, referer: ref, variant, mediaPlaylist: mediaUrl, mediaPlaylistSha256: mediaSha, startedAt, finishedAt: new Date().toISOString(),
+      manifest: url, referer: ref, page, tokenRefreshed, variant, mediaPlaylist: mediaUrl, mediaPlaylistSha256: mediaSha, startedAt, finishedAt: new Date().toISOString(),
       targetDuration: p.targetDuration, encrypted: p.key, fmp4: !!p.map, programDateTime: p.programDateTime, live, segments, sample,
       capturer: 'expedientes-futbol/stream (Vercel)',
     });

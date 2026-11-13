@@ -55,13 +55,23 @@ async function publicHost(host) {
   return ips.length > 0 && !ips.some(L.isPrivateIP);
 }
 
+// Headers como los de un navegador real: 'document' (página), 'iframe' (reproductor embebido) o 'xhr' (manifiesto/segmentos del reproductor).
+// Varios embeds piratas devuelven 403 si faltan los Sec-Fetch-* o si una navegación trae Origin.
+function browserHeaders(referer, mode = 'xhr') {
+  const h = { 'User-Agent': L.UA, 'Accept-Language': 'es-AR,es;q=0.9' };
+  // Entre sitios distintos el navegador manda solo el origen como Referer (strict-origin-when-cross-origin); algunos CDN lo exigen así.
+  if (referer) try { referer = new URL(referer).origin + '/'; } catch { referer = null; }
+  if (mode === 'xhr') return Object.assign(h, { Accept: '*/*', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'cross-site' }, referer ? { Referer: referer, Origin: new URL(referer).origin } : {});
+  return Object.assign(h, { Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': mode, 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': referer ? 'cross-site' : 'none' }, referer ? { Referer: referer } : {});
+}
+
 // fetch que valida cada salto de redirección contra IPs privadas.
-async function fetchSafe(url, referer, ms = 8000) {
+async function fetchSafe(url, referer, ms = 8000, mode = 'xhr') {
   for (let i = 0; i < 5; i++) {
     const u = new URL(url);
     if (!/^https?:$/.test(u.protocol)) throw Object.assign(new Error('Solo http/https'), { code: 400 });
     if (!(await publicHost(u.hostname))) throw Object.assign(new Error('Host privado o sin DNS: ' + u.hostname), { code: 422 });
-    const r = await L.fetchT(url, { redirect: 'manual', headers: { 'User-Agent': L.UA, Accept: '*/*', ...(referer ? { Referer: referer, Origin: new URL(referer).origin } : {}) } }, ms);
+    const r = await L.fetchT(url, { redirect: 'manual', headers: browserHeaders(referer, mode) }, ms);
     const loc = r.status >= 300 && r.status < 400 && r.headers.get('location');
     if (!loc) return { res: r, finalUrl: url };
     url = new URL(loc, url).href;
@@ -75,4 +85,4 @@ async function readCapped(res, max) {
   return { buf: Buffer.concat(chunks), truncated: false };
 }
 
-module.exports = { parseMaster, pickVariant, parseMedia, publicHost, fetchSafe, readCapped, absUrl };
+module.exports = { parseMaster, pickVariant, parseMedia, publicHost, fetchSafe, readCapped, absUrl, browserHeaders };
