@@ -523,7 +523,7 @@ async function frameFromTs(bytes) {
 }
 function manifestOf(c) {
   const p = c.analysis && (c.analysis.video || []).find(x => x.type && x.type.startsWith('HLS'));
-  if (p) return { url: p.url, ref: p.referer || c.target };
+  if (p) return { url: p.url, ref: p.referer || c.target, page: p.referer || null, pref: p.pageReferer || null };
   if (c.videoUrl && /\.m3u8/i.test(c.videoUrl)) return { url: c.videoUrl, ref: c.target };
   return null;
 }
@@ -534,7 +534,7 @@ window.streamCapture = async (id) => {
   const st = $('#strStatus'); const say = (t) => { if (st) st.innerHTML = `<p><span class="spin"></span> ${t}</p>`; else toast(t); };
   say('Leyendo el manifiesto y comprobando que el stream esté en vivo…');
   try {
-    const r = await fetch(`/api/stream-capture?url=${encodeURIComponent(mf.url)}&ref=${encodeURIComponent(mf.ref)}`); const j = await r.json();
+    const r = await fetch(`/api/stream-capture?url=${encodeURIComponent(mf.url)}&ref=${encodeURIComponent(mf.ref)}${mf.page ? '&page=' + encodeURIComponent(mf.page) : ''}${mf.pref ? '&pref=' + encodeURIComponent(mf.pref) : ''}`); const j = await r.json();
     if (!r.ok) throw new Error(j.error || 'HTTP ' + r.status);
     const sample = j.sample && b64ToBytes(j.sample.b64);
     if (sample && await sha256Hex(sample) !== j.sample.sha256) throw new Error('el hash recalculado del segmento no coincide con el del servidor');
@@ -634,8 +634,24 @@ function streamCard(c, ro) {
   <ul class="check small">${ch.map(x => `<li>${x.ok === true ? '<i class="ck y"></i>' : x.ok === false ? '<i class="ck n"></i>' : '<i class="ck w"></i>'} <span><b>${esc(x.t)}</b> · ${esc(x.d)}</span></li>`).join('')}</ul>
   ${c.stream ? `<div class="small mut">Manifiesto ${esc(c.stream.mediaPlaylist)}${c.stream.variant ? ` · variante ${esc(c.stream.variant.resolution || '')} ${Math.round((c.stream.variant.bandwidth || 0) / 1000)} kbps` : ''} · SHA-256 del manifiesto ${esc((c.stream.mediaPlaylistSha256 || '').slice(0, 16))}…</div>` : ''}
   ${!ro && dm && dm.other && !(dm.mine.home && dm.mine.away) ? `<button class="ghost" onclick="setCaseMatch('${c.id}','${esc(dm.other.id)}')">Cambiar al partido detectado: ${esc(matchName(dm.other))}</button>` : ''}
+  ${!ro && !manifestOf(c) ? playerPagesBox(c) : ''}
   ${!ro && manifestOf(c) ? `<div class="row noprint" style="margin-top:8px"><button onclick="streamCaptureBtn('${c.id}')">${c.stream ? 'Volver a capturar el stream' : 'Capturar el stream (segmentos + fotograma)'}</button></div><div id="strStatus"></div>` : ''}</div>`;
 }
+function playerPagesBox(c) {
+  const pp = (c.analysis.signals && c.analysis.signals.playerPages) || []; if (!pp.length) return '';
+  const tx = (l) => ' ' + norm((l.event || '') + ' ' + l.label) + ' ';
+  const rank = (l) => (teamIn(tx(l), c.match.home) ? 1 : 0) + (teamIn(tx(l), c.match.away) ? 1 : 0);
+  const list = pp.map((l, i) => ({ l, i, r: rank(l) })).sort((a, b) => b.r - a.r || a.i - b.i).slice(0, 12);
+  return `<div class="small" style="margin-top:8px"><b>Esta página es una portada o agenda.</b> Elegí el canal o partido para analizar su reproductor:</div>
+  <ul class="check small">${list.map(({ l, r }) => `<li><i class="ck ${r === 2 ? 'y' : 'w'}"></i> <span>${l.event ? `<b>${esc(l.event)}</b> · ` : ''}${esc(l.label || hostOf(l.url))} <button class="ghost" style="padding:2px 10px" onclick="analyzePlayer('${c.id}',${pp.indexOf(l)})">Analizar</button></span></li>`).join('')}</ul>`;
+}
+window.analyzePlayer = async (id, i) => {
+  const c = getCase(id); if (!c || c.seal) return; const l = c.analysis.signals.playerPages[i]; if (!l) return;
+  const prev = c.target; c.portal = c.portal || prev; c.target = l.url; c.videoUrl = null; save();
+  await audit('pagina_reproductor', id, `${prev} → ${l.url}${l.event ? ' (' + l.event + ')' : ''}`);
+  toast('Analizando el reproductor…'); route();
+  await runAnalysis(id); if (manifestOf(getCase(id))) await streamCapture(id); route();
+};
 window.setCaseMatch = async (id, mid) => {
   const c = getCase(id), m = matchById(mid); if (!c || c.seal || !m) return;
   const prev = matchName(c.match);
