@@ -1,0 +1,1690 @@
+{
+  "generado_utc": "2026-11-12T13:33:59.298+00:00",
+  "minuto": 115.72,
+  "finalizado": true,
+  "jueces": {
+    "jueza-laura-ficticia": {
+      "id": "jueza-laura-ficticia",
+      "nombre": "Dra. Laura Ficticia",
+      "juzgado_id": "jg-centro-3",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro"
+    },
+    "juez-martin-ejemplo": {
+      "id": "juez-martin-ejemplo",
+      "nombre": "Dr. Martín Ejemplo",
+      "juzgado_id": "jg-norte-1",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte"
+    }
+  },
+  "proveedores": [
+    {
+      "id": "aurora",
+      "nombre": "Conectividad Aurora (ficticio)",
+      "tamano": "grande",
+      "clientes": 3800000,
+      "capacidades": [
+        "ip",
+        "dominio"
+      ],
+      "ordenes": "/proveedores/aurora/ordenes"
+    },
+    {
+      "id": "andina",
+      "nombre": "Red Andina Telecom (ficticio)",
+      "tamano": "mediano",
+      "clientes": 1200000,
+      "capacidades": [
+        "ip",
+        "dominio"
+      ],
+      "ordenes": "/proveedores/andina/ordenes"
+    },
+    {
+      "id": "valle",
+      "nombre": "FibraValle (ficticio)",
+      "tamano": "chico",
+      "clientes": 140000,
+      "capacidades": [
+        "dominio"
+      ],
+      "ordenes": "/proveedores/valle/ordenes"
+    },
+    {
+      "id": "cumbre",
+      "nombre": "Cooperativa Cumbre Conecta (ficticio)",
+      "tamano": "chico",
+      "clientes": 60000,
+      "capacidades": [
+        "ip",
+        "dominio"
+      ],
+      "ordenes": "/proveedores/cumbre/ordenes"
+    }
+  ],
+  "tramites": [
+    {
+      "expediente_id": "EXP-2026-000001",
+      "sitio": "pelotaya.test",
+      "estado": "aprobado",
+      "abierto_min": 2.0,
+      "juez_asignado": "jueza-laura-ficticia",
+      "asignaciones": [
+        {
+          "juez_id": "jueza-laura-ficticia",
+          "minuto": 2.03,
+          "motivo": "juez de turno al abrir"
+        }
+      ],
+      "decision": {
+        "decision": "aprobado",
+        "juez_id": "jueza-laura-ficticia",
+        "juez": "Dra. Laura Ficticia",
+        "juzgado_id": "jg-centro-3",
+        "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+        "minuto": 2.2,
+        "utc": "2026-11-12T13:22:38.224+00:00",
+        "motivo": "Señal oficial verificada; pedido proporcional según riesgo colateral.",
+        "hash_expediente_firmado": "29adabf41cfacdcea6b9c59f36cf3ca234b317a60a1eb2142f3331550f852fbe",
+        "texto_firmado": "DECISION|EXP-2026-000001|29adabf41cfacdcea6b9c59f36cf3ca234b317a60a1eb2142f3331550f852fbe|aprobado|jueza-laura-ficticia",
+        "firma": "4704b1eb8f0589d38db6759ab2db93769f113f5dcb150e25b9b4b92a3fde0385"
+      },
+      "envios": [
+        {
+          "proveedor": "aurora",
+          "tipo": "ip",
+          "objetivo": "203.0.113.10",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00001",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 2.2,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00001",
+                "estado": "recibida",
+                "consultar": "/proveedores/aurora/ordenes/ORD-00001"
+              },
+              "estado": "vencida",
+              "aplicada_min": 2.781,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "andina",
+          "tipo": "ip",
+          "objetivo": "203.0.113.10",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00005",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 2.2,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00005",
+                "estado": "recibida",
+                "consultar": "/proveedores/andina/ordenes/ORD-00005"
+              },
+              "estado": "vencida",
+              "aplicada_min": 4.449,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "s1-respaldo.pelotaya.test",
+          "vence_min": 105,
+          "nota": "solo acepta dominio: se piden los dominios del sitio en esa IP",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00009",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 2.2,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00009",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00009"
+              },
+              "estado": "vencida",
+              "aplicada_min": 9.318,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "s1.pelotaya.test",
+          "vence_min": 105,
+          "nota": "solo acepta dominio: se piden los dominios del sitio en esa IP",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00013",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 2.2,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00013",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00013"
+              },
+              "estado": "vencida",
+              "aplicada_min": 8.386,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "cumbre",
+          "tipo": "ip",
+          "objetivo": "203.0.113.10",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00017",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 2.2,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00017",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00017"
+              },
+              "estado": "vencida",
+              "aplicada_min": 4.344,
+              "finalizada_min": 105.0
+            }
+          ]
+        }
+      ],
+      "reincidente": false,
+      "avisos": [
+        {
+          "id": "EXP-2026-000001-HOST",
+          "tipo": "hosting",
+          "destinatario": "AS64600 Bruma Hosting Dedicado (ficticio)",
+          "objetivo": "s1.pelotaya.test (203.0.113.10)",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000001, firma 4704b1eb8f0589d3…) se informa que el servidor 203.0.113.10 de su red entrega la transmisión no autorizada https://s1.pelotaya.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000001, hash 29adabf41cfacdcea6b9c59f36cf3ca234b317a60a1eb2142f3331550f852fbe.",
+          "minuto": 2.2
+        },
+        {
+          "id": "EXP-2026-000001-RED1",
+          "tipo": "publicacion",
+          "destinatario": "X (ex Twitter)",
+          "objetivo": "https://x.example/futbolya_ok/status/1001",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000001, firma 4704b1eb8f0589d3…) se solicita a X (ex Twitter) retirar la publicación https://x.example/futbolya_ok/status/1001 (minuto 1), que promociona la transmisión no autorizada https://pelotaya.test/en-vivo, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000001, hash 29adabf41cfacdcea6b9c59f36cf3ca234b317a60a1eb2142f3331550f852fbe.",
+          "minuto": 2.2
+        }
+      ]
+    },
+    {
+      "expediente_id": "EXP-2026-000002",
+      "sitio": "golazo-libre.test",
+      "estado": "aprobado",
+      "abierto_min": 6.0,
+      "juez_asignado": "jueza-laura-ficticia",
+      "asignaciones": [
+        {
+          "juez_id": "jueza-laura-ficticia",
+          "minuto": 6.05,
+          "motivo": "juez de turno al abrir"
+        }
+      ],
+      "decision": {
+        "decision": "aprobado",
+        "juez_id": "jueza-laura-ficticia",
+        "juez": "Dra. Laura Ficticia",
+        "juzgado_id": "jg-centro-3",
+        "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+        "minuto": 6.22,
+        "utc": "2026-11-12T13:23:02.499+00:00",
+        "motivo": "Señal oficial verificada; pedido proporcional según riesgo colateral.",
+        "hash_expediente_firmado": "1a99a5bfca7b91113dc5bf942e2a53dbb3015a4e0f5f33435228e3ca3f3256ed",
+        "texto_firmado": "DECISION|EXP-2026-000002|1a99a5bfca7b91113dc5bf942e2a53dbb3015a4e0f5f33435228e3ca3f3256ed|aprobado|jueza-laura-ficticia",
+        "firma": "fad4eb7f0058dc3392ba9405ea8f979f4ba619d4c40dcb67d13a212baf510a32"
+      },
+      "envios": [
+        {
+          "proveedor": "aurora",
+          "tipo": "dominio",
+          "objetivo": "live.golazo-libre.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00021",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 6.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00021",
+                "estado": "recibida",
+                "consultar": "/proveedores/aurora/ordenes/ORD-00021"
+              },
+              "estado": "vencida",
+              "aplicada_min": 6.82,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "andina",
+          "tipo": "dominio",
+          "objetivo": "live.golazo-libre.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00025",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 6.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00025",
+                "estado": "recibida",
+                "consultar": "/proveedores/andina/ordenes/ORD-00025"
+              },
+              "estado": "vencida",
+              "aplicada_min": 8.168,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "live.golazo-libre.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00029",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 6.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00029",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00029"
+              },
+              "estado": "vencida",
+              "aplicada_min": 11.666,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "cumbre",
+          "tipo": "dominio",
+          "objetivo": "live.golazo-libre.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00033",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 6.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00033",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00033"
+              },
+              "estado": "vencida",
+              "aplicada_min": 8.518,
+              "finalizada_min": 105.0
+            }
+          ]
+        }
+      ],
+      "reincidente": false,
+      "avisos": [
+        {
+          "id": "EXP-2026-000002-HOST",
+          "tipo": "hosting",
+          "destinatario": "AS64610 NubeRápida CDN (ficticia)",
+          "objetivo": "live.golazo-libre.test (198.51.100.20)",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000002, firma fad4eb7f0058dc33…) se informa que el servidor 198.51.100.20 de su red entrega la transmisión no autorizada https://live.golazo-libre.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000002, hash 1a99a5bfca7b91113dc5bf942e2a53dbb3015a4e0f5f33435228e3ca3f3256ed.",
+          "minuto": 6.22
+        },
+        {
+          "id": "EXP-2026-000002-RED1",
+          "tipo": "publicacion",
+          "destinatario": "X (ex Twitter)",
+          "objetivo": "https://x.example/golazolibre/status/2207",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000002, firma fad4eb7f0058dc33…) se solicita a X (ex Twitter) retirar la publicación https://x.example/golazolibre/status/2207 (minuto 4), que promociona la transmisión no autorizada https://golazo-libre.test/partido, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000002, hash 1a99a5bfca7b91113dc5bf942e2a53dbb3015a4e0f5f33435228e3ca3f3256ed.",
+          "minuto": 6.22
+        },
+        {
+          "id": "EXP-2026-000002-RED2",
+          "tipo": "publicacion",
+          "destinatario": "Discord",
+          "objetivo": "https://discord.example/invite/golazo-hoy",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000002, firma fad4eb7f0058dc33…) se solicita a Discord retirar la publicación https://discord.example/invite/golazo-hoy (minuto 5), que promociona la transmisión no autorizada https://golazo-libre.test/partido, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000002, hash 1a99a5bfca7b91113dc5bf942e2a53dbb3015a4e0f5f33435228e3ca3f3256ed.",
+          "minuto": 6.22
+        }
+      ]
+    },
+    {
+      "expediente_id": "EXP-2026-000003",
+      "sitio": "verpartido-hd.test",
+      "estado": "aprobado",
+      "abierto_min": 9.0,
+      "juez_asignado": "jueza-laura-ficticia",
+      "asignaciones": [
+        {
+          "juez_id": "jueza-laura-ficticia",
+          "minuto": 9.07,
+          "motivo": "juez de turno al abrir"
+        }
+      ],
+      "decision": {
+        "decision": "aprobado",
+        "juez_id": "jueza-laura-ficticia",
+        "juez": "Dra. Laura Ficticia",
+        "juzgado_id": "jg-centro-3",
+        "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+        "minuto": 9.24,
+        "utc": "2026-11-12T13:23:20.721+00:00",
+        "motivo": "Señal oficial verificada; pedido proporcional según riesgo colateral.",
+        "hash_expediente_firmado": "c99c254646b4cad45bfccc15090977e5a46e4724b66ba0661f5e53c68b905599",
+        "texto_firmado": "DECISION|EXP-2026-000003|c99c254646b4cad45bfccc15090977e5a46e4724b66ba0661f5e53c68b905599|aprobado|jueza-laura-ficticia",
+        "firma": "fe9c12f2bbd5a1bd18eda0625f7497cd21894491e8a45f53f64b66b440d87b69"
+      },
+      "envios": [
+        {
+          "proveedor": "aurora",
+          "tipo": "dominio",
+          "objetivo": "tv.verpartido-hd.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00037",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 9.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00037",
+                "estado": "recibida",
+                "consultar": "/proveedores/aurora/ordenes/ORD-00037"
+              },
+              "estado": "vencida",
+              "aplicada_min": 9.824,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "andina",
+          "tipo": "dominio",
+          "objetivo": "tv.verpartido-hd.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00041",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 9.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00041",
+                "estado": "recibida",
+                "consultar": "/proveedores/andina/ordenes/ORD-00041"
+              },
+              "estado": "vencida",
+              "aplicada_min": 11.504,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "tv.verpartido-hd.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00045",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 9.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00045",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00045"
+              },
+              "estado": "vencida",
+              "aplicada_min": 15.769,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "cumbre",
+          "tipo": "dominio",
+          "objetivo": "tv.verpartido-hd.test",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00049",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 9.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00049",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00049"
+              },
+              "estado": "vencida",
+              "aplicada_min": 12.305,
+              "finalizada_min": 105.0
+            }
+          ]
+        }
+      ],
+      "reincidente": false,
+      "avisos": [
+        {
+          "id": "EXP-2026-000003-HOST",
+          "tipo": "hosting",
+          "destinatario": "AS64620 Pampa Web Hosting Compartido (ficticio)",
+          "objetivo": "tv.verpartido-hd.test (192.0.2.50)",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000003, firma fe9c12f2bbd5a1bd…) se informa que el servidor 192.0.2.50 de su red entrega la transmisión no autorizada https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000003, hash c99c254646b4cad45bfccc15090977e5a46e4724b66ba0661f5e53c68b905599.",
+          "minuto": 9.24
+        },
+        {
+          "id": "EXP-2026-000003-RED1",
+          "tipo": "publicacion",
+          "destinatario": "Telegram",
+          "objetivo": "https://t.example/verpartidohd",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000003, firma fe9c12f2bbd5a1bd…) se solicita a Telegram retirar la publicación https://t.example/verpartidohd (minuto 7), que promociona la transmisión no autorizada https://verpartido-hd.test/vivo, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000003, hash c99c254646b4cad45bfccc15090977e5a46e4724b66ba0661f5e53c68b905599.",
+          "minuto": 9.24
+        }
+      ]
+    },
+    {
+      "expediente_id": "EXP-2026-000004",
+      "sitio": "pelotaya.test",
+      "estado": "aprobado",
+      "abierto_min": 37.5,
+      "juez_asignado": "jueza-laura-ficticia",
+      "asignaciones": [
+        {
+          "juez_id": "jueza-laura-ficticia",
+          "minuto": 37.56,
+          "motivo": "juez de turno al abrir"
+        }
+      ],
+      "decision": {
+        "decision": "aprobado",
+        "juez_id": "jueza-laura-ficticia",
+        "juez": "Dra. Laura Ficticia",
+        "juzgado_id": "jg-centro-3",
+        "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+        "minuto": 37.74,
+        "utc": "2026-11-12T13:26:11.677+00:00",
+        "motivo": "Señal oficial verificada; pedido proporcional según riesgo colateral.",
+        "hash_expediente_firmado": "8552eb3a9b5b732faee091b6c792f30f009c0f0cea939e8e102c7e6865bced0d",
+        "texto_firmado": "DECISION|EXP-2026-000004|8552eb3a9b5b732faee091b6c792f30f009c0f0cea939e8e102c7e6865bced0d|aprobado|jueza-laura-ficticia",
+        "firma": "cf29e0dea70ac9368bdaa3bb335d0d0ab6237abdbdefbdefad94296f1be849a0"
+      },
+      "envios": [
+        {
+          "proveedor": "aurora",
+          "tipo": "ip",
+          "objetivo": "203.0.113.11",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00053",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 37.74,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00053",
+                "estado": "recibida",
+                "consultar": "/proveedores/aurora/ordenes/ORD-00053"
+              },
+              "estado": "vencida",
+              "aplicada_min": 38.305,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "andina",
+          "tipo": "ip",
+          "objetivo": "203.0.113.11",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00057",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 37.74,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00057",
+                "estado": "recibida",
+                "consultar": "/proveedores/andina/ordenes/ORD-00057"
+              },
+              "estado": "vencida",
+              "aplicada_min": 40.023,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "s2.pelotaya.test",
+          "vence_min": 105,
+          "nota": "solo acepta dominio: se piden los dominios del sitio en esa IP",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00061",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 37.74,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00061",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00061"
+              },
+              "estado": "vencida",
+              "aplicada_min": 42.369,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "cumbre",
+          "tipo": "ip",
+          "objetivo": "203.0.113.11",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00065",
+              "firmado_por": "jueza-laura-ficticia",
+              "enviado_min": 37.74,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00065",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00065"
+              },
+              "estado": "vencida",
+              "aplicada_min": 40.144,
+              "finalizada_min": 105.0
+            }
+          ]
+        }
+      ],
+      "reincidente": true,
+      "avisos": [
+        {
+          "id": "EXP-2026-000004-HOST",
+          "tipo": "hosting",
+          "destinatario": "AS64600 Bruma Hosting Dedicado (ficticio)",
+          "objetivo": "s2.pelotaya.test (203.0.113.11)",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000004, firma cf29e0dea70ac936…) se informa que el servidor 203.0.113.11 de su red entrega la transmisión no autorizada https://s2.pelotaya.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000004, hash 8552eb3a9b5b732faee091b6c792f30f009c0f0cea939e8e102c7e6865bced0d.",
+          "minuto": 37.74
+        },
+        {
+          "id": "EXP-2026-000004-RED1",
+          "tipo": "publicacion",
+          "destinatario": "X (ex Twitter)",
+          "objetivo": "https://x.example/futbolya_ok/status/1001",
+          "texto": "Por orden judicial (Dra. Laura Ficticia — Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro. Orden EXP-2026-000004, firma cf29e0dea70ac936…) se solicita a X (ex Twitter) retirar la publicación https://x.example/futbolya_ok/status/1001 (minuto 1), que promociona la transmisión no autorizada https://pelotaya.test/en-vivo, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000004, hash 8552eb3a9b5b732faee091b6c792f30f009c0f0cea939e8e102c7e6865bced0d.",
+          "minuto": 37.74
+        }
+      ]
+    },
+    {
+      "expediente_id": "EXP-2026-000005",
+      "sitio": "tribuna-pirata.test",
+      "estado": "aprobado",
+      "abierto_min": 55.0,
+      "juez_asignado": "juez-martin-ejemplo",
+      "asignaciones": [
+        {
+          "juez_id": "juez-martin-ejemplo",
+          "minuto": 55.07,
+          "motivo": "juez de turno al abrir"
+        }
+      ],
+      "decision": {
+        "decision": "aprobado",
+        "juez_id": "juez-martin-ejemplo",
+        "juez": "Dr. Martín Ejemplo",
+        "juzgado_id": "jg-norte-1",
+        "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+        "minuto": 55.24,
+        "utc": "2026-11-12T13:27:56.536+00:00",
+        "motivo": "Señal oficial verificada; pedido proporcional según riesgo colateral.",
+        "hash_expediente_firmado": "b5792884079e9271c4fe6dfcde9f9a6a8379e90d30e6642da70edb889bf6f6fa",
+        "texto_firmado": "DECISION|EXP-2026-000005|b5792884079e9271c4fe6dfcde9f9a6a8379e90d30e6642da70edb889bf6f6fa|aprobado|juez-martin-ejemplo",
+        "firma": "313355e8798f9c90c9b81e5e8c8027a9d7fd1cfaf6ebbcbcc558dbe0caa80e11"
+      },
+      "envios": [
+        {
+          "proveedor": "aurora",
+          "tipo": "ip",
+          "objetivo": "203.0.113.40",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00069",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 55.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00069",
+                "estado": "recibida",
+                "consultar": "/proveedores/aurora/ordenes/ORD-00069"
+              },
+              "estado": "vencida",
+              "aplicada_min": 55.773,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "andina",
+          "tipo": "ip",
+          "objetivo": "203.0.113.40",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00073",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 55.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00073",
+                "estado": "recibida",
+                "consultar": "/proveedores/andina/ordenes/ORD-00073"
+              },
+              "estado": "vencida",
+              "aplicada_min": 57.263,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "x9.tribuna-pirata.test",
+          "vence_min": 105,
+          "nota": "solo acepta dominio: se piden los dominios del sitio en esa IP",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00077",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 55.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00077",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00077"
+              },
+              "estado": "vencida",
+              "aplicada_min": 62.039,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "cumbre",
+          "tipo": "ip",
+          "objetivo": "203.0.113.40",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00081",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 55.24,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00081",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00081"
+              },
+              "estado": "fallida",
+              "motivo": "Error interno del proveedor. Reenviar la orden con un nuevo orden_id."
+            },
+            {
+              "orden_id": "ORD-00082",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 58.14,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00082",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00082"
+              },
+              "estado": "vencida",
+              "aplicada_min": 60.749,
+              "finalizada_min": 105.0
+            }
+          ]
+        }
+      ],
+      "reincidente": false,
+      "avisos": [
+        {
+          "id": "EXP-2026-000005-HOST",
+          "tipo": "hosting",
+          "destinatario": "AS64600 Bruma Hosting Dedicado (ficticio)",
+          "objetivo": "x9.tribuna-pirata.test (203.0.113.40)",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000005, firma 313355e8798f9c90…) se informa que el servidor 203.0.113.40 de su red entrega la transmisión no autorizada https://x9.tribuna-pirata.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000005, hash b5792884079e9271c4fe6dfcde9f9a6a8379e90d30e6642da70edb889bf6f6fa.",
+          "minuto": 55.24
+        },
+        {
+          "id": "EXP-2026-000005-RED1",
+          "tipo": "publicacion",
+          "destinatario": "Discord",
+          "objetivo": "https://discord.example/invite/tribuna-vip",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000005, firma 313355e8798f9c90…) se solicita a Discord retirar la publicación https://discord.example/invite/tribuna-vip (minuto 53), que promociona la transmisión no autorizada https://tribuna-pirata.test/ver, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000005, hash b5792884079e9271c4fe6dfcde9f9a6a8379e90d30e6642da70edb889bf6f6fa.",
+          "minuto": 55.24
+        },
+        {
+          "id": "EXP-2026-000005-RED2",
+          "tipo": "publicacion",
+          "destinatario": "Telegram",
+          "objetivo": "https://t.example/tribunapirata",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000005, firma 313355e8798f9c90…) se solicita a Telegram retirar la publicación https://t.example/tribunapirata (minuto 54), que promociona la transmisión no autorizada https://tribuna-pirata.test/ver, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000005, hash b5792884079e9271c4fe6dfcde9f9a6a8379e90d30e6642da70edb889bf6f6fa.",
+          "minuto": 55.24
+        }
+      ]
+    },
+    {
+      "expediente_id": "EXP-2026-000006",
+      "sitio": "pelotaya.test",
+      "estado": "aprobado",
+      "abierto_min": 71.0,
+      "juez_asignado": "juez-martin-ejemplo",
+      "asignaciones": [
+        {
+          "juez_id": "juez-martin-ejemplo",
+          "minuto": 71.04,
+          "motivo": "juez de turno al abrir"
+        }
+      ],
+      "decision": {
+        "decision": "aprobado",
+        "juez_id": "juez-martin-ejemplo",
+        "juez": "Dr. Martín Ejemplo",
+        "juzgado_id": "jg-norte-1",
+        "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+        "minuto": 71.22,
+        "utc": "2026-11-12T13:29:32.625+00:00",
+        "motivo": "Señal oficial verificada; pedido proporcional según riesgo colateral.",
+        "hash_expediente_firmado": "e339bd13c3b21ef1a2b0196fbaac78fcd2fa90af762472b2143e2bd358427d05",
+        "texto_firmado": "DECISION|EXP-2026-000006|e339bd13c3b21ef1a2b0196fbaac78fcd2fa90af762472b2143e2bd358427d05|aprobado|juez-martin-ejemplo",
+        "firma": "d6635c16e79d310765b74fec4a4d5dc15c33a6906d877f79459f7ba667ef96ce"
+      },
+      "envios": [
+        {
+          "proveedor": "aurora",
+          "tipo": "ip",
+          "objetivo": "198.51.100.77",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00085",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 71.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00085",
+                "estado": "recibida",
+                "consultar": "/proveedores/aurora/ordenes/ORD-00085"
+              },
+              "estado": "vencida",
+              "aplicada_min": 71.869,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "andina",
+          "tipo": "ip",
+          "objetivo": "198.51.100.77",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00089",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 71.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00089",
+                "estado": "recibida",
+                "consultar": "/proveedores/andina/ordenes/ORD-00089"
+              },
+              "estado": "vencida",
+              "aplicada_min": 73.315,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "espejo.pelotaya.test",
+          "vence_min": 105,
+          "nota": "solo acepta dominio: se piden los dominios del sitio en esa IP",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00093",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 71.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00093",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00093"
+              },
+              "estado": "vencida",
+              "aplicada_min": 76.397,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "s3.pelotaya.test",
+          "vence_min": 105,
+          "nota": "solo acepta dominio: se piden los dominios del sitio en esa IP",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00097",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 71.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00097",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00097"
+              },
+              "estado": "vencida",
+              "aplicada_min": 77.543,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "cumbre",
+          "tipo": "ip",
+          "objetivo": "198.51.100.77",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00101",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 71.22,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00101",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00101"
+              },
+              "estado": "fallida",
+              "motivo": "Error interno del proveedor. Reenviar la orden con un nuevo orden_id."
+            },
+            {
+              "orden_id": "ORD-00102",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 75.04,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00102",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00102"
+              },
+              "estado": "vencida",
+              "aplicada_min": 78.447,
+              "finalizada_min": 105.0
+            }
+          ]
+        }
+      ],
+      "reincidente": true,
+      "avisos": [
+        {
+          "id": "EXP-2026-000006-HOST",
+          "tipo": "hosting",
+          "destinatario": "AS64630 Servidores Litoral (ficticio)",
+          "objetivo": "s3.pelotaya.test (198.51.100.77)",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000006, firma d6635c16e79d3107…) se informa que el servidor 198.51.100.77 de su red entrega la transmisión no autorizada https://s3.pelotaya.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000006, hash e339bd13c3b21ef1a2b0196fbaac78fcd2fa90af762472b2143e2bd358427d05.",
+          "minuto": 71.22
+        },
+        {
+          "id": "EXP-2026-000006-RED1",
+          "tipo": "publicacion",
+          "destinatario": "X (ex Twitter)",
+          "objetivo": "https://x.example/futbolya_ok/status/1001",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000006, firma d6635c16e79d3107…) se solicita a X (ex Twitter) retirar la publicación https://x.example/futbolya_ok/status/1001 (minuto 1), que promociona la transmisión no autorizada https://pelotaya.test/en-vivo, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000006, hash e339bd13c3b21ef1a2b0196fbaac78fcd2fa90af762472b2143e2bd358427d05.",
+          "minuto": 71.22
+        }
+      ]
+    },
+    {
+      "expediente_id": "EXP-2026-000007",
+      "sitio": "tribuna-pirata.test",
+      "estado": "aprobado",
+      "abierto_min": 82.0,
+      "juez_asignado": "juez-martin-ejemplo",
+      "asignaciones": [
+        {
+          "juez_id": "juez-martin-ejemplo",
+          "minuto": 82.06,
+          "motivo": "juez de turno al abrir"
+        }
+      ],
+      "decision": {
+        "decision": "aprobado",
+        "juez_id": "juez-martin-ejemplo",
+        "juez": "Dr. Martín Ejemplo",
+        "juzgado_id": "jg-norte-1",
+        "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+        "minuto": 82.15,
+        "utc": "2026-11-12T13:30:38.396+00:00",
+        "motivo": "Señal oficial verificada; pedido proporcional según riesgo colateral.",
+        "hash_expediente_firmado": "c67f12854612097e87895838ad6158fb1d76d3a24b0bfe3a86be284063520193",
+        "texto_firmado": "DECISION|EXP-2026-000007|c67f12854612097e87895838ad6158fb1d76d3a24b0bfe3a86be284063520193|aprobado|juez-martin-ejemplo",
+        "firma": "c4edee416681241e19d1ca7f19ae56d7f8e7233bb3c63f73ce0279b24da70a36"
+      },
+      "envios": [
+        {
+          "proveedor": "aurora",
+          "tipo": "ip",
+          "objetivo": "203.0.113.41",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00105",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 82.15,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00105",
+                "estado": "recibida",
+                "consultar": "/proveedores/aurora/ordenes/ORD-00105"
+              },
+              "estado": "vencida",
+              "aplicada_min": 82.684,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "andina",
+          "tipo": "ip",
+          "objetivo": "203.0.113.41",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00109",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 82.15,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00109",
+                "estado": "recibida",
+                "consultar": "/proveedores/andina/ordenes/ORD-00109"
+              },
+              "estado": "vencida",
+              "aplicada_min": 84.808,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "valle",
+          "tipo": "dominio",
+          "objetivo": "x10.tribuna-pirata.test",
+          "vence_min": 105,
+          "nota": "solo acepta dominio: se piden los dominios del sitio en esa IP",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00113",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 82.15,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00113",
+                "estado": "recibida",
+                "consultar": "/proveedores/valle/ordenes/ORD-00113"
+              },
+              "estado": "vencida",
+              "aplicada_min": 87.051,
+              "finalizada_min": 105.0
+            }
+          ]
+        },
+        {
+          "proveedor": "cumbre",
+          "tipo": "ip",
+          "objetivo": "203.0.113.41",
+          "vence_min": 105,
+          "nota": "tipo pedido",
+          "estado": "vencida",
+          "intentos": [
+            {
+              "orden_id": "ORD-00117",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 82.15,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00117",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00117"
+              },
+              "estado": "fallida",
+              "motivo": "Error interno del proveedor. Reenviar la orden con un nuevo orden_id."
+            },
+            {
+              "orden_id": "ORD-00118",
+              "firmado_por": "juez-martin-ejemplo",
+              "enviado_min": 85.0,
+              "http": 202,
+              "respuesta": {
+                "orden_id": "ORD-00118",
+                "estado": "recibida",
+                "consultar": "/proveedores/cumbre/ordenes/ORD-00118"
+              },
+              "estado": "vencida",
+              "aplicada_min": 87.523,
+              "finalizada_min": 105.0
+            }
+          ]
+        }
+      ],
+      "reincidente": true,
+      "avisos": [
+        {
+          "id": "EXP-2026-000007-HOST",
+          "tipo": "hosting",
+          "destinatario": "AS64600 Bruma Hosting Dedicado (ficticio)",
+          "objetivo": "x10.tribuna-pirata.test (203.0.113.41)",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000007, firma c4edee416681241e…) se informa que el servidor 203.0.113.41 de su red entrega la transmisión no autorizada https://x10.tribuna-pirata.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000007, hash c67f12854612097e87895838ad6158fb1d76d3a24b0bfe3a86be284063520193.",
+          "minuto": 82.15
+        },
+        {
+          "id": "EXP-2026-000007-RED1",
+          "tipo": "publicacion",
+          "destinatario": "Discord",
+          "objetivo": "https://discord.example/invite/tribuna-vip",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000007, firma c4edee416681241e…) se solicita a Discord retirar la publicación https://discord.example/invite/tribuna-vip (minuto 53), que promociona la transmisión no autorizada https://tribuna-pirata.test/ver, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000007, hash c67f12854612097e87895838ad6158fb1d76d3a24b0bfe3a86be284063520193.",
+          "minuto": 82.15
+        },
+        {
+          "id": "EXP-2026-000007-RED2",
+          "tipo": "publicacion",
+          "destinatario": "Telegram",
+          "objetivo": "https://t.example/tribunapirata",
+          "texto": "Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000007, firma c4edee416681241e…) se solicita a Telegram retirar la publicación https://t.example/tribunapirata (minuto 54), que promociona la transmisión no autorizada https://tribuna-pirata.test/ver, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000007, hash c67f12854612097e87895838ad6158fb1d76d3a24b0bfe3a86be284063520193.",
+          "minuto": 82.15
+        }
+      ]
+    }
+  ],
+  "reenvios": [],
+  "reclamos": [],
+  "transparencia": [
+    {
+      "expediente_id": "EXP-2026-000001",
+      "sitio": "pelotaya.test",
+      "proveedor": "aurora",
+      "tipo": "ip",
+      "objetivo": "203.0.113.10",
+      "orden_id": "ORD-00001",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 2.2,
+      "aplicada_min": 2.781,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000001",
+      "sitio": "pelotaya.test",
+      "proveedor": "andina",
+      "tipo": "ip",
+      "objetivo": "203.0.113.10",
+      "orden_id": "ORD-00005",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 2.2,
+      "aplicada_min": 4.449,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000001",
+      "sitio": "pelotaya.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "s1-respaldo.pelotaya.test",
+      "orden_id": "ORD-00009",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 2.2,
+      "aplicada_min": 9.318,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000001",
+      "sitio": "pelotaya.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "s1.pelotaya.test",
+      "orden_id": "ORD-00013",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 2.2,
+      "aplicada_min": 8.386,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000001",
+      "sitio": "pelotaya.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "203.0.113.10",
+      "orden_id": "ORD-00017",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 2.2,
+      "aplicada_min": 4.344,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000002",
+      "sitio": "golazo-libre.test",
+      "proveedor": "aurora",
+      "tipo": "dominio",
+      "objetivo": "live.golazo-libre.test",
+      "orden_id": "ORD-00021",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 6.22,
+      "aplicada_min": 6.82,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000002",
+      "sitio": "golazo-libre.test",
+      "proveedor": "andina",
+      "tipo": "dominio",
+      "objetivo": "live.golazo-libre.test",
+      "orden_id": "ORD-00025",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 6.22,
+      "aplicada_min": 8.168,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000002",
+      "sitio": "golazo-libre.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "live.golazo-libre.test",
+      "orden_id": "ORD-00029",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 6.22,
+      "aplicada_min": 11.666,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000002",
+      "sitio": "golazo-libre.test",
+      "proveedor": "cumbre",
+      "tipo": "dominio",
+      "objetivo": "live.golazo-libre.test",
+      "orden_id": "ORD-00033",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 6.22,
+      "aplicada_min": 8.518,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000003",
+      "sitio": "verpartido-hd.test",
+      "proveedor": "aurora",
+      "tipo": "dominio",
+      "objetivo": "tv.verpartido-hd.test",
+      "orden_id": "ORD-00037",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 9.24,
+      "aplicada_min": 9.824,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000003",
+      "sitio": "verpartido-hd.test",
+      "proveedor": "andina",
+      "tipo": "dominio",
+      "objetivo": "tv.verpartido-hd.test",
+      "orden_id": "ORD-00041",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 9.24,
+      "aplicada_min": 11.504,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000003",
+      "sitio": "verpartido-hd.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "tv.verpartido-hd.test",
+      "orden_id": "ORD-00045",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 9.24,
+      "aplicada_min": 15.769,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000003",
+      "sitio": "verpartido-hd.test",
+      "proveedor": "cumbre",
+      "tipo": "dominio",
+      "objetivo": "tv.verpartido-hd.test",
+      "orden_id": "ORD-00049",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 9.24,
+      "aplicada_min": 12.305,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000004",
+      "sitio": "pelotaya.test",
+      "proveedor": "aurora",
+      "tipo": "ip",
+      "objetivo": "203.0.113.11",
+      "orden_id": "ORD-00053",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 37.74,
+      "aplicada_min": 38.305,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000004",
+      "sitio": "pelotaya.test",
+      "proveedor": "andina",
+      "tipo": "ip",
+      "objetivo": "203.0.113.11",
+      "orden_id": "ORD-00057",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 37.74,
+      "aplicada_min": 40.023,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000004",
+      "sitio": "pelotaya.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "s2.pelotaya.test",
+      "orden_id": "ORD-00061",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 37.74,
+      "aplicada_min": 42.369,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000004",
+      "sitio": "pelotaya.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "203.0.113.11",
+      "orden_id": "ORD-00065",
+      "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+      "juez": "Dra. Laura Ficticia",
+      "enviada_min": 37.74,
+      "aplicada_min": 40.144,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000005",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "aurora",
+      "tipo": "ip",
+      "objetivo": "203.0.113.40",
+      "orden_id": "ORD-00069",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 55.24,
+      "aplicada_min": 55.773,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000005",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "andina",
+      "tipo": "ip",
+      "objetivo": "203.0.113.40",
+      "orden_id": "ORD-00073",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 55.24,
+      "aplicada_min": 57.263,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000005",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "x9.tribuna-pirata.test",
+      "orden_id": "ORD-00077",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 55.24,
+      "aplicada_min": 62.039,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000005",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "203.0.113.40",
+      "orden_id": "ORD-00081",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 55.24,
+      "aplicada_min": null,
+      "finalizada_min": null,
+      "vence_min": 105,
+      "estado": "fallida"
+    },
+    {
+      "expediente_id": "EXP-2026-000005",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "203.0.113.40",
+      "orden_id": "ORD-00082",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 58.14,
+      "aplicada_min": 60.749,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000006",
+      "sitio": "pelotaya.test",
+      "proveedor": "aurora",
+      "tipo": "ip",
+      "objetivo": "198.51.100.77",
+      "orden_id": "ORD-00085",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 71.22,
+      "aplicada_min": 71.869,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000006",
+      "sitio": "pelotaya.test",
+      "proveedor": "andina",
+      "tipo": "ip",
+      "objetivo": "198.51.100.77",
+      "orden_id": "ORD-00089",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 71.22,
+      "aplicada_min": 73.315,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000006",
+      "sitio": "pelotaya.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "espejo.pelotaya.test",
+      "orden_id": "ORD-00093",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 71.22,
+      "aplicada_min": 76.397,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000006",
+      "sitio": "pelotaya.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "s3.pelotaya.test",
+      "orden_id": "ORD-00097",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 71.22,
+      "aplicada_min": 77.543,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000006",
+      "sitio": "pelotaya.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "198.51.100.77",
+      "orden_id": "ORD-00101",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 71.22,
+      "aplicada_min": null,
+      "finalizada_min": null,
+      "vence_min": 105,
+      "estado": "fallida"
+    },
+    {
+      "expediente_id": "EXP-2026-000006",
+      "sitio": "pelotaya.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "198.51.100.77",
+      "orden_id": "ORD-00102",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 75.04,
+      "aplicada_min": 78.447,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000007",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "aurora",
+      "tipo": "ip",
+      "objetivo": "203.0.113.41",
+      "orden_id": "ORD-00105",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 82.15,
+      "aplicada_min": 82.684,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000007",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "andina",
+      "tipo": "ip",
+      "objetivo": "203.0.113.41",
+      "orden_id": "ORD-00109",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 82.15,
+      "aplicada_min": 84.808,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000007",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "valle",
+      "tipo": "dominio",
+      "objetivo": "x10.tribuna-pirata.test",
+      "orden_id": "ORD-00113",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 82.15,
+      "aplicada_min": 87.051,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    },
+    {
+      "expediente_id": "EXP-2026-000007",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "203.0.113.41",
+      "orden_id": "ORD-00117",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 82.15,
+      "aplicada_min": null,
+      "finalizada_min": null,
+      "vence_min": 105,
+      "estado": "fallida"
+    },
+    {
+      "expediente_id": "EXP-2026-000007",
+      "sitio": "tribuna-pirata.test",
+      "proveedor": "cumbre",
+      "tipo": "ip",
+      "objetivo": "203.0.113.41",
+      "orden_id": "ORD-00118",
+      "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+      "juez": "Dr. Martín Ejemplo",
+      "enviada_min": 85.0,
+      "aplicada_min": 87.523,
+      "finalizada_min": 105.0,
+      "vence_min": 105,
+      "estado": "vencida"
+    }
+  ],
+  "vencimiento_verificado": true,
+  "auditoria": {
+    "archivo": "auditoria.jsonl",
+    "entradas": 188,
+    "hash_final": "5cbea821179fee98918d78d9b59214364f626a9849ae7f03f663e5bfeb124b14"
+  }
+}

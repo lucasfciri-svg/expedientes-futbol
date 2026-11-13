@@ -1,0 +1,4 @@
+Para: AS64630 Servidores Litoral (ficticio)
+Objetivo: s3.pelotaya.test (198.51.100.77)
+
+Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000006, firma d6635c16e79d3107…) se informa que el servidor 198.51.100.77 de su red entrega la transmisión no autorizada https://s3.pelotaya.test/hls/en-vivo/index.m3u8 del partido «practica-01», titular Liga Profesional Ficticia. Se solicita: 1) suspender el servicio al cliente que opera ese servidor; 2) preservar los registros de contratación, pago y acceso; 3) no reasignarle otra IP para el mismo uso. Evidencia: expediente EXP-2026-000006, hash e339bd13c3b21ef1a2b0196fbaac78fcd2fa90af762472b2143e2bd358427d05.

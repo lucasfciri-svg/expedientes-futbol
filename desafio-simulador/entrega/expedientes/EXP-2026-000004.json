@@ -1,0 +1,219 @@
+{
+  "expediente_id": "EXP-2026-000004",
+  "abierto_utc": "2026-11-12T13:26:10.381+00:00",
+  "partido": "practica-01",
+  "titular_derechos": "Liga Profesional Ficticia",
+  "sitio": "pelotaya.test",
+  "pagina": "https://pelotaya.test/en-vivo",
+  "fase_del_sitio": 2,
+  "expedientes_previos_del_sitio": [
+    "EXP-2026-000001"
+  ],
+  "cambio_de_servidor": true,
+  "verificacion_marca": {
+    "resultado": "senal_oficial",
+    "es_senal_del_partido": true,
+    "marca": "LP26-PRA-OFI-S048211",
+    "prefijo": "LP26-PRA-OFI",
+    "detalle": "La marca LP26-PRA-OFI-S048211 coincide con el prefijo LP26-PRA-OFI (Señal oficial del titular (plataforma propia)) y no corresponde a ningún licenciatario."
+  },
+  "servidor": {
+    "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+    "host_stream": "s2.pelotaya.test",
+    "ip": "203.0.113.11",
+    "asn": 64600,
+    "organizacion_asn": "Bruma Hosting Dedicado (ficticio)",
+    "ips_vistas_para_el_host": [
+      {
+        "ip": "203.0.113.11",
+        "asn": 64600,
+        "organizacion": "Bruma Hosting Dedicado (ficticio)"
+      }
+    ],
+    "nota": "Se bloquea el servidor que entrega el video, no la página del reproductor."
+  },
+  "riesgo_colateral": {
+    "ip": "203.0.113.11",
+    "asn": 64600,
+    "organizacion_asn": "Bruma Hosting Dedicado (ficticio)",
+    "dominios_en_la_ip": [
+      "s2.pelotaya.test"
+    ],
+    "dominios_del_mismo_sitio": [
+      "s2.pelotaya.test"
+    ],
+    "dominios_de_terceros": [],
+    "ip_compartida": false,
+    "bloqueo_recomendado": "ip",
+    "objetivo": "203.0.113.11",
+    "motivo": "La IP 203.0.113.11 solo aloja dominios del propio sitio (s2.pelotaya.test): bloqueo por IP sin daño colateral conocido; corta también subdominios espejo."
+  },
+  "pedido": {
+    "tipo": "ip",
+    "objetivo": "203.0.113.11",
+    "vence_min": 105,
+    "vence_hora": "2026-11-11T19:45:00-03:00",
+    "fundamento_vencimiento": "Vence al terminar el partido (minuto 105); los bloqueos por IP no deben quedar activos después."
+  },
+  "primera_deteccion_min": 37.5,
+  "ultima_deteccion_min": 67.5,
+  "promocion": [
+    {
+      "red": "x",
+      "url": "https://x.example/futbolya_ok/status/1001",
+      "minuto": 1.0
+    }
+  ],
+  "evidencia": [
+    {
+      "deteccion_id": "D-0014",
+      "minuto_partido": 37.5,
+      "captura_min": 37.5,
+      "captura_hora": "2026-11-11T18:37:30-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:26:10.380+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "f27a4a5fba9cfc873c9750f4186c354c253b9dcb696de7b8c2bc789e0217ebe7",
+      "sha256_deteccion": "cf6a4efdc7b4a4b7fff004d0f66381cb10a44ebc9daeb946a65b5191a120260b",
+      "hash_previo": "303ad5f2668e86ef229af65024fa04c2c4b4291415c5c817e1af1f7c4e4a7539",
+      "deteccion_original": {
+        "id": "D-0014",
+        "minuto": 37.5,
+        "pagina": "https://pelotaya.test/en-vivo",
+        "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+        "host_stream": "s2.pelotaya.test",
+        "ip_servidor": "203.0.113.11",
+        "asn": 64600,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S048211",
+        "captura": {
+          "capturada_min": 37.5,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R4G2psD29qRNcRjBXhz26p6jlFAaX2qLfoxZdjZ8aQMen/BxHhgncoUUpHaWZIEYwwKXQ4GNJpILdyml+WJSAQ=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/futbolya_ok/status/1001",
+            "minuto": 1.0
+          }
+        ]
+      },
+      "hash_encadenado": "57ce57b6720a6c287feb664e2a0e16a09bf2399debda0a09c799f417b800a829"
+    },
+    {
+      "deteccion_id": "D-0018",
+      "minuto_partido": 47.5,
+      "captura_min": 47.5,
+      "captura_hora": "2026-11-11T18:47:30-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:27:10.503+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "9599883ea344a37cae84b60cf0843560e94ab7e4ffcc20df5a6c594be29ab3ec",
+      "sha256_deteccion": "9e2400782d613a89de7a67ff1e62c8ad111661bbe04664e1cde0412145f12f61",
+      "hash_previo": "0c33f7bcedc8114ce47c14b8a45bf8ea35ba763ae34d86f47d5919f35f11e090",
+      "deteccion_original": {
+        "id": "D-0018",
+        "minuto": 47.5,
+        "pagina": "https://pelotaya.test/en-vivo",
+        "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+        "host_stream": "s2.pelotaya.test",
+        "ip_servidor": "203.0.113.11",
+        "asn": 64600,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S048211",
+        "captura": {
+          "capturada_min": 47.5,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R2BV16ooxjzmR6jWhOtYJlzHcZ/HFvbYGjoglK/uBdH+B0Q/Jtb4j/8H+UKQNUqNJ9BNIJMlC5PfAiq2BrEtkg=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/futbolya_ok/status/1001",
+            "minuto": 1.0
+          }
+        ]
+      },
+      "hash_encadenado": "61f0eb6e69f70bbca334f0d720db50d44844c50e2e86028a08798628ec94d7f7"
+    },
+    {
+      "deteccion_id": "D-0023",
+      "minuto_partido": 57.5,
+      "captura_min": 57.5,
+      "captura_hora": "2026-11-11T18:57:30-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:28:10.147+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "3ebbbcfccd44e067e86b258e0f6109a02ff5fdaed5907569135ce620a64e85d1",
+      "sha256_deteccion": "8411cdb488a1b054265799067eabc0369e7054364034143206f5ab876bc36eef",
+      "hash_previo": "2a1199b98c628ab84b865de27dbad1c6144de98994a57c4c3740bf05dccc8cfd",
+      "deteccion_original": {
+        "id": "D-0023",
+        "minuto": 57.5,
+        "pagina": "https://pelotaya.test/en-vivo",
+        "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+        "host_stream": "s2.pelotaya.test",
+        "ip_servidor": "203.0.113.11",
+        "asn": 64600,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S048211",
+        "captura": {
+          "capturada_min": 57.5,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R8hQvBJasZahfNQHcOpLuqVdYZTLA+5X1QMubyc1dmn24psFPugjgbzziDSKH0JAdhIuNLDGXFddfK0heSeZRw=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/futbolya_ok/status/1001",
+            "minuto": 1.0
+          }
+        ]
+      },
+      "hash_encadenado": "e21356209df41c52654cdd1be63b2119e334679469af0327a56ab55050dda719"
+    },
+    {
+      "deteccion_id": "D-0027",
+      "minuto_partido": 67.5,
+      "captura_min": 67.5,
+      "captura_hora": "2026-11-11T19:07:30-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:29:10.514+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "7f3481262aaded72da331ecf29ed6d93be271a9d919919f5305bb092071849c6",
+      "sha256_deteccion": "4c722795eb0c57445da1e2e5b2160a18430407a7bf3b6e9dc5ed12a382391199",
+      "hash_previo": "4c297f1dea8ec5fe231af5da8674ad942942342a701355fb929d36cd7dfdebee",
+      "deteccion_original": {
+        "id": "D-0027",
+        "minuto": 67.5,
+        "pagina": "https://pelotaya.test/en-vivo",
+        "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+        "host_stream": "s2.pelotaya.test",
+        "ip_servidor": "203.0.113.11",
+        "asn": 64600,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S048211",
+        "captura": {
+          "capturada_min": 67.5,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R3KPPie57RcCrLDAQQqytMHTshvAYqqHPBro29/kXNMOg9CUvUHs50TVMGoA4AhxBG2qNMRrLvR0yipZYqKjmA=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/futbolya_ok/status/1001",
+            "minuto": 1.0
+          }
+        ]
+      },
+      "hash_encadenado": "3733ed70257fa000c22a4192c2dd6c9e67d25b5b1b0f58756b19c46c15484f69"
+    }
+  ],
+  "estado": "pendiente_de_juez",
+  "hash_expediente": "5c48a5f86caf4a2be2aac4a11e7bd976014f80f64c60b2edaeccf715d0da3c75"
+}

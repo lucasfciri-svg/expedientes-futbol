@@ -1,0 +1,15 @@
+{
+  "aviso": "Usuarios de demostraci\u00f3n (ficticios). Contrase\u00f1as en plataforma/README.md.",
+  "usuarios": {
+    "laura": {
+      "juez_id": "jueza-laura-ficticia",
+      "sal": "30757d7e46893f7a80808edda3d3c96a",
+      "hash": "55a2f901d1ab399a052d747a69d5d46d45acae6e57ab1701441c53475907c9be"
+    },
+    "martin": {
+      "juez_id": "juez-martin-ejemplo",
+      "sal": "b9d3cf2b3eb561268a5e90100628f3b9",
+      "hash": "1bf27d7f2f265ce437c67976927e108261851f233627c4fe8491ce49bdf125eb"
+    }
+  }
+}

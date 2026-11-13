@@ -1,0 +1,44 @@
+Evaluación del escenario practica-01 (registro hasta el minuto 110.0)
+
+Resumen
+  fases piratas bloqueadas: 7 de 7
+  visibilidad residual promedio pct: 3.7
+  ordenes recibidas: 33
+  ordenes aplicadas: 30
+  ordenes fallidas: 3
+  ordenes rechazadas: 0
+  bloqueos con dano colateral: 0
+  dominios legitimos afectados: 0
+  bloqueos falsos positivos: 0
+  bloqueos ip activos post partido: 0
+  reclamos: 0
+  reclamos resueltos por levantamiento: 0
+  ordenes firmadas fuera de turno: 0
+
+1. Streams piratas por fase
+  pelotaya fase 1 (203.0.113.10 / s1.pelotaya.test, min 2–36): primer bloqueo 0.8 min · clientes cubiertos 100.0 % · visibilidad residual 3.9 %
+  pelotaya fase 2 (203.0.113.11 / s2.pelotaya.test, min 37.5–70): primer bloqueo 0.8 min · clientes cubiertos 100.0 % · visibilidad residual 4.1 %
+  pelotaya fase 3 (198.51.100.77 / s3.pelotaya.test, min 71–105): primer bloqueo 0.9 min · clientes cubiertos 100.0 % · visibilidad residual 4.2 %
+  golazo-cdn fase 1 (198.51.100.20 / live.golazo-libre.test, min 6–105): primer bloqueo 0.8 min · clientes cubiertos 100.0 % · visibilidad residual 1.3 %
+  verpartido fase 1 (192.0.2.50 / tv.verpartido-hd.test, min 9–105): primer bloqueo 0.8 min · clientes cubiertos 100.0 % · visibilidad residual 1.5 %
+  tribuna fase 1 (203.0.113.40 / x9.tribuna-pirata.test, min 55–81): primer bloqueo 0.8 min · clientes cubiertos 100.0 % · visibilidad residual 5.2 %
+  tribuna fase 2 (203.0.113.41 / x10.tribuna-pirata.test, min 82–105): primer bloqueo 0.7 min · clientes cubiertos 100.0 % · visibilidad residual 5.9 %
+
+2. Daño colateral
+  Ningún bloqueo afectó sitios legítimos.
+
+3. Falsos positivos bloqueados
+  Ninguno.
+
+4. Bloqueos activos después del partido (minuto 110)
+  Por ip (deberían haber vencido): 0
+  Por dominio (informativo): 0
+
+5. Reclamos de sitios afectados
+  No hubo reclamos.
+
+6. Órdenes rechazadas por los proveedores
+  Ninguna.
+
+7. Órdenes firmadas por un juez fuera de turno
+  Ninguna.

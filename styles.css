@@ -114,3 +114,10 @@ body.menu .top{z-index:45;background:transparent}body.menu .word{color:var(--w)}
 .graph .gn.cdn rect{stroke:var(--ye)}
 .qcard{border-left:6px solid var(--g)}.qcard.hl{outline:3px solid var(--ye)}
 .qmatch{display:flex;gap:10px;align-items:center;margin:12px 0}
+
+body.pdf{background:#fff;color:#000}body.pdf .top,body.pdf nav,body.pdf .foot,body.pdf #app button,body.pdf #app .btn,body.pdf .noprint{display:none!important}
+body.pdf .card{border:1px solid #999;background:#fff;color:#000;break-inside:avoid}body.pdf .card a{color:#000}body.pdf .mut,body.pdf .card .mut{color:#444}body.pdf .pill{border:1px solid #666;color:#000;background:#fff}
+body.pdf .hero p,body.pdf .hero b{color:#000;font-size:22px}body.pdf .verdict{border:1px solid #000;background:#fff!important;color:#000!important}body.pdf main{max-width:760px}
+body.pdf td,body.pdf th{word-break:break-word;overflow-wrap:anywhere}body.pdf table{table-layout:fixed;width:100%}
+#pdfBox{position:fixed;left:12px;right:12px;bottom:70px;z-index:60;background:var(--k);color:#fff;border:2px solid var(--g);padding:14px;display:flex;flex-direction:column;gap:6px;max-width:520px;margin:0 auto}#pdfBox .btn,#pdfBox button{font-size:14px}
+@media print{#pdfBox{display:none}}body.pdf #pdfBox{display:none}

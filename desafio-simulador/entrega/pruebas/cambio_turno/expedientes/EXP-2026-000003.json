@@ -1,0 +1,265 @@
+{
+  "expediente_id": "EXP-2026-000003",
+  "abierto_utc": "2026-11-12T12:34:49.822+00:00",
+  "partido": "practica-01",
+  "titular_derechos": "Liga Profesional Ficticia",
+  "sitio": "verpartido-hd.test",
+  "pagina": "https://verpartido-hd.test/vivo",
+  "fase_del_sitio": 1,
+  "expedientes_previos_del_sitio": [],
+  "cambio_de_servidor": false,
+  "verificacion_marca": {
+    "resultado": "senal_oficial",
+    "es_senal_del_partido": true,
+    "marca": "LP26-PRA-OFI-S010457",
+    "prefijo": "LP26-PRA-OFI",
+    "detalle": "La marca LP26-PRA-OFI-S010457 coincide con el prefijo LP26-PRA-OFI (Señal oficial del titular (plataforma propia)) y no corresponde a ningún licenciatario."
+  },
+  "servidor": {
+    "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+    "host_stream": "tv.verpartido-hd.test",
+    "ip": "192.0.2.50",
+    "asn": 64620,
+    "organizacion_asn": "Pampa Web Hosting Compartido (ficticio)",
+    "ips_vistas_para_el_host": [
+      {
+        "ip": "192.0.2.50",
+        "asn": 64620,
+        "organizacion": "Pampa Web Hosting Compartido (ficticio)"
+      }
+    ],
+    "nota": "Se bloquea el servidor que entrega el video, no la página del reproductor."
+  },
+  "riesgo_colateral": {
+    "ip": "192.0.2.50",
+    "asn": 64620,
+    "organizacion_asn": "Pampa Web Hosting Compartido (ficticio)",
+    "dominios_en_la_ip": [
+      "tv.verpartido-hd.test",
+      "verpartido-hd.test",
+      "panaderia-la-espiga.test",
+      "club-atletico-barrio-norte.test",
+      "escuela-tecnica-12.test",
+      "estudio-contable-ruiz.test"
+    ],
+    "dominios_del_mismo_sitio": [
+      "tv.verpartido-hd.test",
+      "verpartido-hd.test"
+    ],
+    "dominios_de_terceros": [
+      "club-atletico-barrio-norte.test",
+      "escuela-tecnica-12.test",
+      "estudio-contable-ruiz.test",
+      "panaderia-la-espiga.test"
+    ],
+    "ip_compartida": true,
+    "bloqueo_recomendado": "dominio",
+    "objetivo": "tv.verpartido-hd.test",
+    "motivo": "La IP 192.0.2.50 es compartida con 4 sitio(s) de terceros. Bloquearla los dejaría sin servicio: se pide bloqueo por dominio (tv.verpartido-hd.test)."
+  },
+  "pedido": {
+    "tipo": "dominio",
+    "objetivo": "tv.verpartido-hd.test",
+    "vence_min": 105,
+    "vence_hora": "2026-11-11T19:45:00-03:00",
+    "fundamento_vencimiento": "Vence al terminar el partido (minuto 105); los bloqueos por IP no deben quedar activos después."
+  },
+  "primera_deteccion_min": 9.0,
+  "ultima_deteccion_min": 49.0,
+  "promocion": [
+    {
+      "red": "telegram",
+      "url": "https://t.example/verpartidohd",
+      "minuto": 7.0
+    }
+  ],
+  "evidencia": [
+    {
+      "deteccion_id": "D-0004",
+      "minuto_partido": 9.0,
+      "captura_min": 9.0,
+      "captura_hora": "2026-11-11T18:09:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T12:34:49.821+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "b3e5dd0f6977847eea9f86d67cc43e2d8b9aa378b92a131fa358e10db718b796",
+      "sha256_deteccion": "bd504c7ec8e0232bfa5f388891eb589a421c9ffd02bdb7f86b0804c6b78ffe03",
+      "hash_previo": "edc5823245b331e021afdfa7cd079e032017d8ca6e2aa083757b6ba748536443",
+      "deteccion_original": {
+        "id": "D-0004",
+        "minuto": 9.0,
+        "pagina": "https://verpartido-hd.test/vivo",
+        "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+        "host_stream": "tv.verpartido-hd.test",
+        "ip_servidor": "192.0.2.50",
+        "asn": 64620,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S010457",
+        "captura": {
+          "capturada_min": 9.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R5ZW+FE1lPhjsVnEzdSZpMGTL1DXtIcHUPzBRZNIaZJw1k2CN88xkIJmNZS0qrErH2zcZzzs5C6gOPr/mhziJg=="
+        },
+        "promocion": [
+          {
+            "red": "telegram",
+            "url": "https://t.example/verpartidohd",
+            "minuto": 7.0
+          }
+        ]
+      },
+      "hash_encadenado": "27d5c781539c1964759ae8449f221ccfdab27910bfb5f61902315f1c6c918686"
+    },
+    {
+      "deteccion_id": "D-0007",
+      "minuto_partido": 19.0,
+      "captura_min": 19.0,
+      "captura_hora": "2026-11-11T18:19:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T12:34:49.823+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "bc6eae3469b9a893a1953f7834cc86e2c2294d13e269f0abfcbc299e5d67843e",
+      "sha256_deteccion": "8b09969bef546166d0966117be561a3dab0600bab9ac9870ea55c3b4fd28c87e",
+      "hash_previo": "ddb960fad32929d9a5136400c9af26d3afae4531ed2df3495021bebd7721fda4",
+      "deteccion_original": {
+        "id": "D-0007",
+        "minuto": 19.0,
+        "pagina": "https://verpartido-hd.test/vivo",
+        "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+        "host_stream": "tv.verpartido-hd.test",
+        "ip_servidor": "192.0.2.50",
+        "asn": 64620,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S010457",
+        "captura": {
+          "capturada_min": 19.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R2rBe6HNyu0iyU2zt85gKL4aUwRnWwHqZ8G9QxiHZNGZFmTKHgGN1O966IryxqCy3quHyYKomNF3F7M4dLVa5g=="
+        },
+        "promocion": [
+          {
+            "red": "telegram",
+            "url": "https://t.example/verpartidohd",
+            "minuto": 7.0
+          }
+        ]
+      },
+      "hash_encadenado": "be2d91b694fef1281bf6f5a3fc8b17a7f6e0d06fadb76e909dcde137ca5a8258"
+    },
+    {
+      "deteccion_id": "D-0011",
+      "minuto_partido": 29.0,
+      "captura_min": 29.0,
+      "captura_hora": "2026-11-11T18:29:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T12:34:49.823+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "ab0f61a33b7dfbb0ea3f5383224ad66b454c68aa7df3c4f9c8399972db3d9960",
+      "sha256_deteccion": "36abb97dd0993c6431ebf5850af125c694484d3acaa8eabcaa614a0f04540f9c",
+      "hash_previo": "c6b23fb8cf0b004ac2ec2f909ab4aa579d0f022548f88693d613d92093d47fce",
+      "deteccion_original": {
+        "id": "D-0011",
+        "minuto": 29.0,
+        "pagina": "https://verpartido-hd.test/vivo",
+        "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+        "host_stream": "tv.verpartido-hd.test",
+        "ip_servidor": "192.0.2.50",
+        "asn": 64620,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S010457",
+        "captura": {
+          "capturada_min": 29.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R6OMQumK1kkNAE6w6ZMVnlnx/lXnkjEZ3DfaM1I8pG9LzASVarOvqndRcKYOj0MmlqnoL8lu6xd1MmTj2mqInA=="
+        },
+        "promocion": [
+          {
+            "red": "telegram",
+            "url": "https://t.example/verpartidohd",
+            "minuto": 7.0
+          }
+        ]
+      },
+      "hash_encadenado": "241c3ea99de3ef1434121e289d676aa33a0277e05743cc0e6854ce509a0bb370"
+    },
+    {
+      "deteccion_id": "D-0015",
+      "minuto_partido": 39.0,
+      "captura_min": 39.0,
+      "captura_hora": "2026-11-11T18:39:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T12:35:06.171+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "b30c8546299a611c6f1578c83537ec1c82c7d54a63bf550ca743bddfc5dce3e5",
+      "sha256_deteccion": "1b3086486fa6d942f005b3f654883dde2dafdbb27200f4cd0815efe4945b7b94",
+      "hash_previo": "1c9e3ccbfe087cfd5ec5b9dfa656dd4715f96dccb26a23be05e4e204c1f05d99",
+      "deteccion_original": {
+        "id": "D-0015",
+        "minuto": 39.0,
+        "pagina": "https://verpartido-hd.test/vivo",
+        "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+        "host_stream": "tv.verpartido-hd.test",
+        "ip_servidor": "192.0.2.50",
+        "asn": 64620,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S010457",
+        "captura": {
+          "capturada_min": 39.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R68OvE0vGuYRco7Mk2aJ5ncA4eMch8LyHb7gz7+femvgXETO+iNdzr9RtOuy0nM0JSwQh6Wd2LVGYgik/3vtQQ=="
+        },
+        "promocion": [
+          {
+            "red": "telegram",
+            "url": "https://t.example/verpartidohd",
+            "minuto": 7.0
+          }
+        ]
+      },
+      "hash_encadenado": "d336883be601a32ee4d6959b5b3fdcc27521961fe2e477dac81bcce2e6b91170"
+    },
+    {
+      "deteccion_id": "D-0019",
+      "minuto_partido": 49.0,
+      "captura_min": 49.0,
+      "captura_hora": "2026-11-11T18:49:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T12:36:06.284+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "aab0acb53f8cc1ca0f371d7ccdded80c2972c8c8349d25105769ea50e1a420b1",
+      "sha256_deteccion": "3e310e4e7b7cb0d871acda40b5f6552468bd6ba022560077020c57fdd197ecaf",
+      "hash_previo": "ab667426ba56c2d6e0c879cdbd4f4ebc4c13bc57e92ff32abca63e2a05c919b6",
+      "deteccion_original": {
+        "id": "D-0019",
+        "minuto": 49.0,
+        "pagina": "https://verpartido-hd.test/vivo",
+        "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+        "host_stream": "tv.verpartido-hd.test",
+        "ip_servidor": "192.0.2.50",
+        "asn": 64620,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S010457",
+        "captura": {
+          "capturada_min": 49.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R/UnKBMftuIZmxQYXVQehwYLot4cLHpo9F+QhvfN0ZxOiwFzo+z2v1+/qMBbrub0IA37/8K+FnlRmrC36FrDzA=="
+        },
+        "promocion": [
+          {
+            "red": "telegram",
+            "url": "https://t.example/verpartidohd",
+            "minuto": 7.0
+          }
+        ]
+      },
+      "hash_encadenado": "8069754e005bdceec4e8ac2dfc5e84356ffe2a7a29bbc3ba5a2097c710519dae"
+    }
+  ],
+  "estado": "pendiente_de_juez",
+  "hash_expediente": "dcf48f186f87788a0ef9e080bfcc5034e679c3708e5102ad08c97409bccf5abe"
+}

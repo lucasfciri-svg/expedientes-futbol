@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Órdenes de bloqueo — Juez</title>
+<style>
+:root{--az:#1f3a5f;--ok:#1e7a46;--no:#a33;--gr:#666;--bg:#f4f6f9}
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,sans-serif;background:var(--bg);color:#222}
+header{background:var(--az);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;position:sticky;top:0;z-index:2}
+header b{font-size:16px}header small{opacity:.85}
+main{max-width:860px;margin:auto;padding:12px}
+.card{background:#fff;border-radius:10px;box-shadow:0 1px 3px #0002;padding:14px;margin:0 0 12px}
+h2{font-size:17px;margin:4px 0 10px}h3{font-size:15px;margin:10px 0 4px;color:var(--az)}
+.tag{display:inline-block;border-radius:12px;padding:1px 9px;font-size:12px;font-weight:600;background:#e7ecf3;color:var(--az)}
+.tag.ok{background:#dff2e6;color:var(--ok)}.tag.no{background:#f8e1e1;color:var(--no)}.tag.warn{background:#fff1cf;color:#8a5a00}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 10px;margin:6px 0}dt{color:var(--gr)}dd{margin:0;word-break:break-all}
+button{font:inherit;border:0;border-radius:8px;padding:12px 16px;font-weight:600;cursor:pointer}
+.acc{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}.acc button{flex:1;min-width:140px}
+.b-ok{background:var(--ok);color:#fff}.b-no{background:#fff;color:var(--no);border:2px solid var(--no)}.b-sec{background:#e7ecf3;color:var(--az)}
+input,textarea{font:inherit;width:100%;padding:11px;border:1px solid #bbb;border-radius:8px;margin:4px 0 10px}
+.login{max-width:360px;margin:40px auto}.err{color:var(--no);min-height:1.4em}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:5px;border-bottom:1px solid #eee;text-align:left}
+.muted{color:var(--gr);font-size:13px}.banner{padding:10px 14px;border-radius:8px;margin-bottom:12px;font-weight:600}
+.banner.off{background:#f8e1e1;color:var(--no)}.banner.on{background:#dff2e6;color:var(--ok)}
+@media(max-width:560px){dl{grid-template-columns:1fr}dt{margin-top:4px}}
+</style></head><body>
+<header><div><b>Plataforma de bloqueo en vivo</b><br><small id="sub">Ingreso de jueces</small></div>
+<div id="hdr"></div></header>
+<main id="app"></main>
+<script>
+const $=s=>document.querySelector(s), app=$('#app'); let vistos=new Set(), primera=true, timer;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function api(u,b){const r=await fetch(u,b?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}:{});return [r.status,await r.json()]}
+function beep(){try{const c=new AudioContext(),o=c.createOscillator();o.frequency.value=880;o.connect(c.destination);o.start();o.stop(c.currentTime+.25)}catch(e){}}
+function avisar(p){const t=p.tipo=='expediente'?`${p.reincidente?'URGENTE, cambió de servidor: ':'Nuevo expediente '}${p.id} (${p.sitio})`:p.tipo=='reclamo'?`Reclamo ${p.id}: ${p.dominio}`:`Reenvío ${p.id} pendiente`;
+ beep(); navigator.vibrate&&navigator.vibrate(200);
+ if('Notification' in window&&Notification.permission=='granted') new Notification('Firma pendiente',{body:t});}
+function login(){clearInterval(timer);$('#hdr').innerHTML='';$('#sub').textContent='Ingreso de jueces';
+ app.innerHTML=`<div class="card login"><h2>Ingresar</h2><form id="f"><label>Usuario<input name="u" autocomplete="username" required></label>
+ <label>Contraseña<input name="c" type="password" autocomplete="current-password" required></label><div class="err" id="e"></div>
+ <button class="b-ok" style="width:100%">Ingresar</button></form><p class="muted">Cada juez ve y firma solo lo que le corresponde mientras está de turno.</p></div>`;
+ $('#f').onsubmit=async ev=>{ev.preventDefault();const[s,d]=await api('/api/login',{usuario:ev.target.u.value,clave:ev.target.c.value});
+  if(s==200){'Notification' in window&&Notification.requestPermission();iniciar()}else $('#e').textContent=d.error}}
+async function salir(){await api('/api/logout',{});login()}
+function iniciar(){primera=true;vistos=new Set();refrescar();timer=setInterval(refrescar,2000)}
+function tarjeta(p){
+ if(p.tipo=='expediente') return `<div class="card"><h2>${esc(p.id)} · ${esc(p.sitio)} <span class="tag warn">pendiente</span>${p.reincidente?' <span class="tag no">reincidente · prioridad</span>':''}</h2>
+  <div class="banner on" style="text-align:left">Pide bloqueo por <b>${esc(p.pedido.tipo)}</b> de <b>${esc(p.pedido.objetivo)}</b> hasta el minuto ${esc(p.pedido.vence_min)}.
+  Marca del partido (${esc(p.prefijo)}), ${p.terceros.length?p.terceros.length+' terceros comparten la IP: se pide dominio':'IP exclusiva del sitio'},
+  ${p.evidencias} capturas con hash${p.previos.length?', reincide tras '+p.previos.map(esc).join(', '):''}.</div>
+  <h3>1. Señal oficial</h3><div>${esc(p.marca)} — ${esc(p.marca_detalle)}</div>
+  <h3>2. Servidor</h3><dl><dt>Host</dt><dd>${esc(p.host)}</dd><dt>IP</dt><dd>${esc(p.ip)}</dd><dt>ASN</dt><dd>AS${esc(p.asn)} ${esc(p.organizacion_asn||'')}</dd><dt>Stream</dt><dd><code>${esc(p.stream_url)}</code></dd></dl>
+  <h3>3. Riesgo colateral</h3><div>${esc(p.colateral)}</div>${p.terceros.length?`<div class="muted">Terceros en la IP: ${p.terceros.map(esc).join(', ')}</div>`:''}
+  <h3>4. Evidencia</h3><dl><dt>Capturas</dt><dd>${p.evidencias}</dd><dt>Último SHA-256</dt><dd><code>${esc(p.ultimo_sha256)}</code></dd><dt>Hash expediente</dt><dd><code>${esc(p.hash_expediente)}</code></dd></dl>
+  <details><summary>Capturas (minutos ${p.primera_min} a ${p.ultima_min})</summary>${p.capturas.map(c=>`<div><b>${esc(c.id)}</b> min ${c.min}: <a href="/api/evidencia/${esc(p.id)}/${esc(c.id)}">descargar</a> <code>${esc(c.sha256)}</code></div>`).join('')}</details>
+  <h3>5. Promoción</h3><div class="muted">${p.promocion.map(x=>esc(x.red)+': '+esc(x.url)).join('<br>')||'Sin datos'}</div>
+  <h3>6. Pedido</h3><dl><dt>Bloqueo</dt><dd><span class="tag">${esc(p.pedido.tipo)}</span> ${esc(p.pedido.objetivo)}</dd><dt>Vence</dt><dd>minuto ${esc(p.pedido.vence_min)}</dd></dl>
+  <textarea id="m-${p.id}" rows="2" placeholder="Fundamento (opcional)"></textarea>
+  <div class="acc"><button class="b-ok" onclick="decidir('${p.id}','aprobar')">Aprobar y firmar</button><button class="b-no" onclick="decidir('${p.id}','rechazar')">Rechazar</button></div></div>`;
+ if(p.tipo=='reenvio') return `<div class="card"><h2>Reenvío ${esc(p.id)} <span class="tag warn">firma requerida</span></h2>
+  <div>${esc(p.proveedor)} falló al aplicar <b>${esc(p.tipo_bloqueo)} ${esc(p.objetivo)}</b> (${esc(p.expediente_id)}). ${esc(p.motivo)}.</div>
+  <div class="acc"><button class="b-ok" onclick="reenviar('${p.id}')">Firmar reenvío</button></div></div>`;
+ const v=p.verificacion; return `<div class="card"><h2>Reclamo ${esc(p.id)} · ${esc(p.dominio)} <span class="tag ${v.valido?'ok':'no'}">${v.valido?'verificado':'no verificado'}</span></h2>
+  <div>“${esc(p.mensaje)}”</div><p class="muted">${esc(v.motivo)}</p>
+  <div class="acc"><button class="b-ok" onclick="reclamo('${p.id}','aceptar')">Levantar y reemplazar por dominio</button><button class="b-no" onclick="reclamo('${p.id}','rechazar')">Rechazar reclamo</button></div></div>`}
+async function refrescar(){const[s,d]=await api('/api/yo'); if(s==401) return login();
+ $('#sub').textContent=`${d.juez.nombre} · minuto ${d.minuto}`;$('#hdr').innerHTML=`<button class="b-sec" onclick="salir()">Salir</button>`;
+ const nuevos=d.pendientes.filter(p=>!vistos.has(p.id)); nuevos.forEach(p=>vistos.add(p.id)); if(!primera) nuevos.forEach(avisar); primera=false;
+ document.title=(d.pendientes.length?`(${d.pendientes.length}) `:'')+'Órdenes de bloqueo';
+ const foco=document.activeElement&&document.activeElement.tagName=='TEXTAREA'; if(foco) return;
+ app.innerHTML=`<div class="banner ${d.de_turno?'on':'off'}">${d.de_turno?'De turno: puede firmar.':'Fuera de turno: no puede firmar. Los pendientes pasaron al juez entrante.'}</div>
+ <h2>Pendientes (${d.pendientes.length})</h2>${d.pendientes.map(tarjeta).join('')||'<div class="card muted">No hay pendientes.</div>'}
+ <h2>Mis decisiones y seguimiento</h2>${d.decididos.map(x=>`<div class="card"><b>${esc(x.expediente_id)}</b> · ${esc(x.sitio)} <span class="tag ${x.decision=='aprobado'?'ok':'no'}">${esc(x.decision)}</span> <span class="muted">min ${x.minuto}</span>
+  ${x.envios.length?`<table><tr><th>Proveedor</th><th>Bloqueo</th><th>Estado</th><th>Intentos</th></tr>${x.envios.map(e=>`<tr><td>${esc(e.proveedor)}</td><td>${esc(e.tipo||'—')} ${esc(e.objetivo||'')}</td><td><span class="tag ${e.estado=='aplicada'?'ok':/fallida|rechazada/.test(e.estado)?'no':''}">${esc(e.estado)}</span></td><td>${e.intentos}</td></tr>`).join('')}</table>`:''}</div>`).join('')||'<div class="card muted">Todavía no firmó nada.</div>'}`}
+async function decidir(id,d){const m=($('#m-'+id)||{}).value||'';const[s,r]=await api(`/api/expedientes/${id}/decision`,{decision:d,motivo:m});if(s!=200)alert(r.error);refrescar()}
+async function reenviar(id){const[s,r]=await api(`/api/reenvios/${id}/firmar`,{});if(s!=200)alert(r.error);refrescar()}
+async function reclamo(id,d){const[s,r]=await api(`/api/reclamos/${id}/decision`,{decision:d});if(s!=200)alert(r.error);refrescar()}
+api('/api/yo').then(([s])=>s==200?iniciar():login());
+</script></body></html>

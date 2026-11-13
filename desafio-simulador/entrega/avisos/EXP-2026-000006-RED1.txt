@@ -1,0 +1,4 @@
+Para: X (ex Twitter)
+Objetivo: https://x.example/futbolya_ok/status/1001
+
+Por orden judicial (Dr. Martín Ejemplo — Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte. Orden EXP-2026-000006, firma d6635c16e79d3107…) se solicita a X (ex Twitter) retirar la publicación https://x.example/futbolya_ok/status/1001 (minuto 1), que promociona la transmisión no autorizada https://pelotaya.test/en-vivo, y preservar los datos de la cuenta que la publicó. Evidencia: expediente EXP-2026-000006, hash e339bd13c3b21ef1a2b0196fbaac78fcd2fa90af762472b2143e2bd358427d05.

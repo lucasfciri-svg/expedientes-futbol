@@ -1,0 +1,517 @@
+{
+  "expediente_id": "EXP-2026-000002",
+  "abierto_utc": "2026-11-12T13:23:01.302+00:00",
+  "partido": "practica-01",
+  "titular_derechos": "Liga Profesional Ficticia",
+  "sitio": "golazo-libre.test",
+  "pagina": "https://golazo-libre.test/partido",
+  "fase_del_sitio": 1,
+  "expedientes_previos_del_sitio": [],
+  "cambio_de_servidor": false,
+  "verificacion_marca": {
+    "resultado": "senal_oficial",
+    "es_senal_del_partido": true,
+    "marca": "LP26-PRA-OFI-S077310",
+    "prefijo": "LP26-PRA-OFI",
+    "detalle": "La marca LP26-PRA-OFI-S077310 coincide con el prefijo LP26-PRA-OFI (Señal oficial del titular (plataforma propia)) y no corresponde a ningún licenciatario."
+  },
+  "servidor": {
+    "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+    "host_stream": "live.golazo-libre.test",
+    "ip": "198.51.100.20",
+    "asn": 64610,
+    "organizacion_asn": "NubeRápida CDN (ficticia)",
+    "ips_vistas_para_el_host": [
+      {
+        "ip": "198.51.100.20",
+        "asn": 64610,
+        "organizacion": "NubeRápida CDN (ficticia)"
+      }
+    ],
+    "nota": "Se bloquea el servidor que entrega el video, no la página del reproductor."
+  },
+  "riesgo_colateral": {
+    "ip": "198.51.100.20",
+    "asn": 64610,
+    "organizacion_asn": "NubeRápida CDN (ficticia)",
+    "dominios_en_la_ip": [
+      "live.golazo-libre.test",
+      "tienda-mate-y-yerba.test",
+      "noticias-del-valle.test",
+      "turismo-cafayate.example",
+      "radio-comunitaria-fm.test",
+      "municipio-ejemplo.example",
+      "biblioteca-popular-norte.test",
+      "delivery-salta-ejemplo.test",
+      "clinica-veterinaria-sol.test",
+      "inmobiliaria-ejemplo.test",
+      "academia-de-ingles.test",
+      "feria-artesanal.example"
+    ],
+    "dominios_del_mismo_sitio": [
+      "live.golazo-libre.test"
+    ],
+    "dominios_de_terceros": [
+      "academia-de-ingles.test",
+      "biblioteca-popular-norte.test",
+      "clinica-veterinaria-sol.test",
+      "delivery-salta-ejemplo.test",
+      "feria-artesanal.example",
+      "inmobiliaria-ejemplo.test",
+      "municipio-ejemplo.example",
+      "noticias-del-valle.test",
+      "radio-comunitaria-fm.test",
+      "tienda-mate-y-yerba.test",
+      "turismo-cafayate.example"
+    ],
+    "ip_compartida": true,
+    "bloqueo_recomendado": "dominio",
+    "objetivo": "live.golazo-libre.test",
+    "motivo": "La IP 198.51.100.20 es compartida con 11 sitio(s) de terceros. Bloquearla los dejaría sin servicio: se pide bloqueo por dominio (live.golazo-libre.test)."
+  },
+  "pedido": {
+    "tipo": "dominio",
+    "objetivo": "live.golazo-libre.test",
+    "vence_min": 105,
+    "vence_hora": "2026-11-11T19:45:00-03:00",
+    "fundamento_vencimiento": "Vence al terminar el partido (minuto 105); los bloqueos por IP no deben quedar activos después."
+  },
+  "primera_deteccion_min": 6.0,
+  "ultima_deteccion_min": 96.0,
+  "promocion": [
+    {
+      "red": "x",
+      "url": "https://x.example/golazolibre/status/2207",
+      "minuto": 4.0
+    },
+    {
+      "red": "discord",
+      "url": "https://discord.example/invite/golazo-hoy",
+      "minuto": 5.0
+    }
+  ],
+  "evidencia": [
+    {
+      "deteccion_id": "D-0003",
+      "minuto_partido": 6.0,
+      "captura_min": 6.0,
+      "captura_hora": "2026-11-11T18:06:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:23:01.299+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "485b937379e696ae00920a738d03b3062ef615309dda5a10b2eb90a001f6665e",
+      "sha256_deteccion": "f9553502e500bfd72e6adaf2f13ada36142b0b55f49585feb612403eb8ac3ed5",
+      "hash_previo": "37a31dab62de0404f667437512b9a6a354ba4c91d385a9f54ba14a347ee016e5",
+      "deteccion_original": {
+        "id": "D-0003",
+        "minuto": 6.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 6.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R0VCZSIFk8ZdS4KLyWGvZyBgTRG3Q/r7zN01hN4BLIEDSu1jEEsjRysDQA8huKd7Tc/NcICJPD9uel6f0LcElw=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "9a07aa30b5bc2e29ff6b9f5820904a147d8a4897e8c7cc67e07d1e4005f9bcd2"
+    },
+    {
+      "deteccion_id": "D-0006",
+      "minuto_partido": 16.0,
+      "captura_min": 16.0,
+      "captura_hora": "2026-11-11T18:16:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:24:01.001+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "476df8927ad67696430a56012f698616b16ce9dd741a912c9b0e2ab2ee65fa4d",
+      "sha256_deteccion": "886a319001a570e848594d59ed3def440462f6821f02554e0ea81e0041dfd110",
+      "hash_previo": "29bb8a830d32ef58073c5d5967ccc3e071f7a6212dc7961ad64bd0a1b37924d7",
+      "deteccion_original": {
+        "id": "D-0006",
+        "minuto": 16.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 16.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R+a4lbguTMvLWNMVx1/Dsgn3HifREFaYl4rA1Fx5aWvaUx86RoM0s5Lei2Sr4qt/qKrGlSt/mHW3TwWV6nZrLg=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "c09a82cb1c75c658a2a375c3bddaa20ba3d6c31d5a7656b83c99969e4e57ba51"
+    },
+    {
+      "deteccion_id": "D-0010",
+      "minuto_partido": 26.0,
+      "captura_min": 26.0,
+      "captura_hora": "2026-11-11T18:26:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:25:01.434+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "335deef52e9f3ea119b518bc373389011d542ae75000b76acd3e92c28299a1d4",
+      "sha256_deteccion": "761329bbada472c71666c68c82d157faad8a7eebce222a56fbc3273010c60f5c",
+      "hash_previo": "0526193b862b606f003e215bb59f6894518e486386c9c060b952ec7ebfab149c",
+      "deteccion_original": {
+        "id": "D-0010",
+        "minuto": 26.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 26.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "RzX96ps9sQiyIc5ePHgQx51Fghind94JJWoBKNN3dBOw3v7km/qw+10fxqnDfDT73SaWxd7AAUo/T5w2+ics8w=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "97e572860adc1f142bc92649b8768203796de7cf91d9ae141378eef044cd1cc4"
+    },
+    {
+      "deteccion_id": "D-0013",
+      "minuto_partido": 36.0,
+      "captura_min": 36.0,
+      "captura_hora": "2026-11-11T18:36:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:26:01.506+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "95c46e4fc8389fba2285acb68bfbf5e56a7bfdc820f9073c61c11c84870e727a",
+      "sha256_deteccion": "535d33147dacf1050b57e0556c8b92a27cbf10d40ec7384ed57cddb7dcb6495a",
+      "hash_previo": "a85c04fc2a1157ecba5b3230133933786e3b487dd13a978025230782be2a144b",
+      "deteccion_original": {
+        "id": "D-0013",
+        "minuto": 36.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 36.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R2upwTDISNiE5DV9i9sltEKk2CIdz1R0wnf4kHU2VbgkwhLxQV9jdX71M8zyetiec03Pwson95PX0GhfLcYaKw=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "303ad5f2668e86ef229af65024fa04c2c4b4291415c5c817e1af1f7c4e4a7539"
+    },
+    {
+      "deteccion_id": "D-0017",
+      "minuto_partido": 46.0,
+      "captura_min": 46.0,
+      "captura_hora": "2026-11-11T18:46:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:27:01.364+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "f1d7e43b8cac01917e90cff9a6cbd802f0ee31622476c0a4ab969c9d3c3ac744",
+      "sha256_deteccion": "0690135be790865f92c42bd2d42e4189f637bc57ba1074d2b7d3821508e21807",
+      "hash_previo": "c4daadc114fbb092036f91c3b7ad7983c95a36a35a9ae5e99c36cc2ab6b8594e",
+      "deteccion_original": {
+        "id": "D-0017",
+        "minuto": 46.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 46.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R9Zg4USD3lcsaelwCJyMDcrr/X2llgbMXZ0hYMF4s1HQe5T93ME1lkdYaX8MX9KjcSIimwm2hOFb5u14ncDDAg=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "0c33f7bcedc8114ce47c14b8a45bf8ea35ba763ae34d86f47d5919f35f11e090"
+    },
+    {
+      "deteccion_id": "D-0022",
+      "minuto_partido": 56.0,
+      "captura_min": 56.0,
+      "captura_hora": "2026-11-11T18:56:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:28:01.181+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "ffeddb9173b097b7e760a1388ab086fed9bd5eb4b3c6fa931a716d7f029c5514",
+      "sha256_deteccion": "ae6e7cf9475e365e7a56628bc7f4931b5c9f1aa78c7617d6ac16e3b4f29e1b09",
+      "hash_previo": "b2f34607c381a4a5654b0ba2a9102a6e8e524a1a5fbd58d87e85e313b7095fec",
+      "deteccion_original": {
+        "id": "D-0022",
+        "minuto": 56.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 56.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R8j3BQ0hhvnXtE5SR+zi2vsQ/MbGmjkcRqjcf6tJcEM41Kx0OeMdbu+y5vOZexI/FJKV+Hq+KaNIOlSKfnYnXQ=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "2a1199b98c628ab84b865de27dbad1c6144de98994a57c4c3740bf05dccc8cfd"
+    },
+    {
+      "deteccion_id": "D-0026",
+      "minuto_partido": 66.0,
+      "captura_min": 66.0,
+      "captura_hora": "2026-11-11T19:06:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:29:01.343+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "851ec43052c6e057945fb369b9a127034f6c7ce58ec2dcc12ded6e0aa645c611",
+      "sha256_deteccion": "80f84a2ad40cf965f3545352c54028175dfde749cd9f3075ad8be84b0bc24829",
+      "hash_previo": "bbd78e5ae12b87035692f2d88a80c09c0b5c8acc437d2036d9a113d04671910a",
+      "deteccion_original": {
+        "id": "D-0026",
+        "minuto": 66.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 66.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R3RN342iqKK4DBDFeKe0f54uQ8HgFSyNyEdvPqbP0qhOh91ydVWMrH8MCVbge/KvBAOswQ/KvJF3iky4HB2XjA=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "4c297f1dea8ec5fe231af5da8674ad942942342a701355fb929d36cd7dfdebee"
+    },
+    {
+      "deteccion_id": "D-0031",
+      "minuto_partido": 76.0,
+      "captura_min": 76.0,
+      "captura_hora": "2026-11-11T19:16:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:30:01.095+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "64ff450fa777ea9ca2b7ce36c90bfe3c6f89a7254c091aec2db746371e969985",
+      "sha256_deteccion": "b7b9bc0e282694fc14bbb286367411a4473dfc05c128be637384d2cc9f398115",
+      "hash_previo": "d709f455b2397470187d0a675e7e2cb198865580061f7b212549cb6c93d7c46f",
+      "deteccion_original": {
+        "id": "D-0031",
+        "minuto": 76.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 76.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "RxL/ahq5TkDpI4hnMhA4rjMK8pHDlA5L8LLf4917mDW4erUqDyew6TAuagxu4jViJE+v+e6hD0f66Cqvh/Q4qA=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "1712b244851bdc2e4a46a8d8e95e473f25bc93196ce03c68e3367ce035722e01"
+    },
+    {
+      "deteccion_id": "D-0036",
+      "minuto_partido": 86.0,
+      "captura_min": 86.0,
+      "captura_hora": "2026-11-11T19:26:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:31:01.020+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "a37d351e9aea24382ed7c483772536ec713791b0e769b9bf87e0c44b1ef40432",
+      "sha256_deteccion": "614bbb58ee68bdca41775dc2e156a83b7447908e3a0768e17971d25ebc975ec5",
+      "hash_previo": "134c32f87ce8e91d9034e56a3aaab227fff0aebbec619062928d18711172ba1a",
+      "deteccion_original": {
+        "id": "D-0036",
+        "minuto": 86.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 86.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "R+XMMDKAhiuuIXruzddy4e1nVO+IPUlwuK+/II1Im5fmLUFEVOPnyHo2NF6XcAhLfJLHQfvzmjmKKgCZvOvcgw=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "8bef5b170f85b68ce8d6deacb3b2c25240e5f72c7124e2360e884642a706ca79"
+    },
+    {
+      "deteccion_id": "D-0040",
+      "minuto_partido": 96.0,
+      "captura_min": 96.0,
+      "captura_hora": "2026-11-11T19:36:00-03:00",
+      "recibida_por_plataforma_utc": "2026-11-12T13:32:01.474+00:00",
+      "captura_formato": "mpegts",
+      "captura_duracion_seg": 6,
+      "captura_bytes": 64,
+      "sha256_captura": "cc4ea1fc07084930b6dd357bfc3adb38dc42ccd75433e4d6a896233618219572",
+      "sha256_deteccion": "e8baf685128d2a2a6f04d82681bf9457dff79acf3630d27ed397d45684511ee4",
+      "hash_previo": "a93aeb51713a9f5d7886ea7ba71a9677d040ed1444222f6e36533d47871704a0",
+      "deteccion_original": {
+        "id": "D-0040",
+        "minuto": 96.0,
+        "pagina": "https://golazo-libre.test/partido",
+        "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+        "host_stream": "live.golazo-libre.test",
+        "ip_servidor": "198.51.100.20",
+        "asn": 64610,
+        "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+        "captura": {
+          "capturada_min": 96.0,
+          "formato": "mpegts",
+          "duracion_seg": 6,
+          "contenido_b64": "RzCRJuWHMJax9R1Vo+Obt7636yFrwl0eQ/y3/qPxe/BLQr8ZZK9qKwZnqKa3zP+IIpzdpmdUQFrQ5HgMlxjF/A=="
+        },
+        "promocion": [
+          {
+            "red": "x",
+            "url": "https://x.example/golazolibre/status/2207",
+            "minuto": 4.0
+          },
+          {
+            "red": "discord",
+            "url": "https://discord.example/invite/golazo-hoy",
+            "minuto": 5.0
+          }
+        ]
+      },
+      "hash_encadenado": "368d26dd7413d234b769673be3b2554f0da5a4dc3f03163b6f7e716f15e6bc30"
+    }
+  ],
+  "estado": "pendiente_de_juez",
+  "hash_expediente": "2de625726d92f8295d73047caf6195f45d41596ae856b59b52d874b8332f3f66"
+}
